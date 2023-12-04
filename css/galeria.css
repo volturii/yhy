@@ -1,0 +1,353 @@
+* {
+    box-sizing: border-box;
+    text-decoration: none;
+}
+.nazwy{
+    position: absolute;
+    left: 1%;
+    top: 5px;
+    color: black;
+    font-size: 20px;
+    color: blue;
+    display: none;
+    background-color: white;
+    font-size: 15px;
+    border: 1px solid blue;
+    border-radius: 10px;
+    padding: 5px;
+    
+}
+
+
+   div.salto:hover p.nazwy{
+        display: block;
+        
+    }
+.salto img{
+   
+}
+
+
+.linki{
+    font-size: 20px;
+    font-family: Comic Sans MS;
+}
+
+
+body {
+    background-image: url('https://firebasestorage.googleapis.com/v0/b/stronamakaron.appspot.com/o/deska.png?alt=media&token=097fe864-1681-402e-ac1b-0c0f40621e17');
+    background-size: cover;
+    background-attachment: fixed;
+
+}
+
+.tytol {
+    font-size: 56px;
+    margin: auto;
+    text-align: center;
+    color:blue;
+
+}
+
+    
+.gallery {
+    background: linear-gradient(
+        10deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.4)
+    );
+    border-radius: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    list-style-type: none;
+    padding: 34px;
+}
+
+.miniaturka {
+    border: solid 2px;
+    border-radius: 15px;
+    box-shadow: 0 0 28px 2px rgba(6, 0, 0, 1);
+    cursor: pointer;
+    margin: 32px;
+    max-height: 250px;
+    max-width: 350px;
+    overflow: hidden;
+    transform: scale(1);
+    transition: transform 0.3s;
+}
+
+.miniaturka:hover {
+    transform: scale(1.2);
+}
+
+.miniaturka img {
+    height: 100%;
+    object-fit: cover;
+    width: 130%;
+}
+
+
+.okienko {
+    align-content: center;
+    animation: fadeIn 0.3s;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 100vh;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+}
+
+.okienko.hidden {
+    display: none;
+}
+
+.okienko.fade-out {
+    animation: fadeOut 0.3s both;
+}
+
+.okienko__img {
+    max-height: 80%;
+    max-width: 80%;
+}
+
+.okienko__close {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 70px;
+    position: fixed;
+    right: 64px;
+    top: 64px;
+}
+
+.okienko__arrow {
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 128px;
+    height: 128px;
+    line-height: 128px;
+    position: absolute;
+    top: 50%;
+    width: 128px;
+}
+
+.okienko__close,
+.okienko__arrow {
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.okienko__close:hover,
+.okienko__arrow:hover {
+    opacity: 1;
+}
+
+.okienko__arrow--left {
+    left: 5%;
+}
+
+.okienko__arrow--right {
+    right: 5%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+
+
+
+
+.galeria {
+    width: 100%;
+    min-height: 100vh; /* Zmiana na min-height dla utrzymania odstępu */
+    background-size: cover;
+    background-position: center;
+    margin-top: 120px;
+    padding-bottom: 20px; /* Dodanie dolnego odstępu dla estetyki */
+}
+
+
+
+.galeria nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 0 0 8px rgba(0,0,0,0.6);
+    background: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+}
+
+
+
+.galeria nav .logo{
+    font-size: 35px;
+    margin: 5px 0;
+    cursor: pointer;
+    position: relative;
+    left: -4%;
+}
+
+
+
+.galeria nav ul{
+    list-style: none;
+}
+
+.galeria nav ul li{
+    display: inline-block;
+    margin: 5px 15px;
+}
+
+.galeria nav ul li a{
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
+}
+
+.galeria nav ul li a:hover{
+    color: #c72092;
+}
+
+.galeria nav .icons i{
+    margin: 0 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+.galeria nav .icons i:hover{
+    color: #c72092;
+}
+
+
+
+/* Dodaj media queries dla mniejszych rozdzielczości */
+@media screen and (max-width: 768px) {
+  .galeria nav ul {
+    display: none; /* Ukryj podstawowe menu */
+  }
+
+  /* Pokaż przycisk menu */
+  .galeria nav .menu-toggle {
+    display: none;
+    font-size: 18px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+
+  /* Ukryj logo na mniejszych rozdzielczościach */
+  .galeria nav .logo {
+    font-size: 15px;
+  }
+
+  /* Pokaż rozwijane menu po kliknięciu przycisku */
+  .galeria nav .menu-toggle:checked ~ ul {
+    display: block;
+  }
+
+  /* Stylizacja rozwijanego menu */
+  .galeria nav ul li {
+    display: block;
+    margin: 5px 0;
+  }
+
+  .galeria nav ul li a {
+    display: block;
+    padding: 10px;
+  }
+    
+   .galeria nav label {
+    color: black;
+  }
+}
+
+
+
+
+
+@media screen and (min-width: 768px) {
+
+  .galeria nav .menu-toggle {
+    display: none;
+
+}
+    
+   .galeria nav label {
+    display: none;
+  }
+}
+
+
+
+
+
+
+@media screen and (max-width: 768px) {
+    .galeria {
+        margin-top: 60px; /* Zmniejszenie marginesu dla mniejszych ekranów */
+    }
+
+    .opis {
+        margin: 10px; /* Zmniejszenie marginesu dla mniejszych ekranów */
+    }
+}
+
+
+
+
+
+.opis {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 1300px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%; /* Dostosuj szerokość opisu do 90% szerokości ekranu */
+}
+
+.opis p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.opis a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.opis a:hover {
+    text-decoration: underline;
+}
